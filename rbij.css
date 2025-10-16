@@ -1,0 +1,68 @@
+/* Load Inter for consistent typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* ===== Theme ===== */
+:root{
+  --page-bg: #ffffff;
+  --panel:   #c9deee;  /* blue blocks */
+  --ink:     #024269;  /* headings / strong */
+  --ink-sub: #024269;  /* body text */
+  --gap:     24px;
+}
+
+*{ box-sizing: border-box; }
+body{
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink-sub);
+  line-height: 1.55;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 40px 32px;
+  font-size: 12px;
+}
+.container{ max-width: 1100px; margin: 0 auto; }
+
+/* Links (underlined by default, accessible focus) */
+a{ color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+a:hover, a:focus{ text-decoration: underline; text-underline-offset: 2px; }
+a:focus-visible{ outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* Column titles */
+.col-title{
+  margin: 0 0 14px 0;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 18px;           /* a tad bigger */
+  letter-spacing: .2px;
+}
+
+/* Blue blocks */
+.block{
+  background: var(--panel);
+  padding: 18px;             /* tightened */
+  border-radius: 0;          /* square corners */
+}
+.block h3{ margin: 0 0 12px; color: var(--ink); font-size: 16px; font-weight: 400 !important; } /* not bold */
+.block p{ margin: 10px 0; }
+.block ul{ margin: 10px 0 0 18px; }
+.block li{ margin: 4px 0; }
+
+/* Separation between subsections within a single Past Wins block (space only) */
+.issue + .issue{ margin-top:16px; padding-top:0; border-top:none; }
+
+/* Stats */
+.stat-stack{ display: grid; gap: 12px; }
+.stat{ background: var(--panel); padding: 12px; border-radius: 0; }
+.stat p{ margin: 0; font-size: 12px; }
+.stat b{ color: var(--ink); font-weight: 800; }
+
+/* Grid */
+.section-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: start;
+  margin-bottom: 28px;
+}
+.section-grid.one-col{ grid-template-columns: 1fr; }
+@media (max-width: 900px){ .section-grid{ grid-template-columns: 1fr; } }
